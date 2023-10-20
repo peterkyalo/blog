@@ -1,0 +1,1 @@
+START AT #7 Send Email Verification on Registration (Mailtrap) in Laravel 10 BLog Project in Laravel 10
