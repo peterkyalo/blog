@@ -51,7 +51,6 @@ class AuthController extends Controller
 
     public function auth_login(Request $request)
     {
-        // dd($request->all());
         $remember = !empty($request->remember) ? true : false;
 
         if (Auth::attempt(['email'=> $request->email, 'password'=> $request->password], $remember))
@@ -69,10 +68,8 @@ class AuthController extends Controller
                 $save = User::getSingle($user_id);
                 $save->remember_token = Str::random(40);
                 $save->save();
-
                 // Send Email
                 Mail::to($save->email)->send(new RegisterMail($save));
-
                 return redirect()->back()->with('success', 'Please first check your inbox to verify your email.');
             }
 
