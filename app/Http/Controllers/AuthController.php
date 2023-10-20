@@ -96,6 +96,7 @@ class AuthController extends Controller
         {
             abort(404);
         }
+        
 
     }
 }
